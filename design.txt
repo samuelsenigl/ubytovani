@@ -1,0 +1,46 @@
+Designový manuál: Styl Minimalistický Fine-Art
+Tento styl nestojí na grafických efektech, ale na dokonalé rovnováze mezi prázdným prostorem a obsahem.
+
+1. Barevná paleta (Monochromatická & Organická)
+Web se vyhýbá sytým barvám. Vše je laděno do přírodních, tlumených tónů:
+
+Dominantní bílá/krémová: Tvoří pozadí (tzv. "white space"), které dává obsahu dýchat.
+
+Antracitová až černá: Používá se výhradně pro text a jemné linky. Nikdy ne čistě černá (#000), ale velmi tmavě šedá pro měkčí kontrast.
+
+Zemitý akcent: Jedinou doplňkovou barvou jsou přirozené barvy na fotografiích (dřevo, kámen, zeleň).
+
+2. Typografie (Typografický kontrast)
+Klíčem je kombinace dvou typů písma, která působí redakčním (magazínovým) dojmem:
+
+Nadpisy (Serif): Elegantní patkové písmo s vysokým kontrastem (tenké a silné tahy). Působí vznešeně a tradičně. (Inspirace: Playfair Display, Bodoni nebo Adobe Caslon).
+
+Tělo textu (Sans-serif): Moderní, čisté bezpatkové písmo s větším prostrkáním písmen (letter-spacing). Působí vzdušně a lehce. (Inspirace: Montserrat (light), Lato nebo Inter).
+
+3. Práce s fotografiemi (Klíčový prvek)
+Na tomto webu fotografie není doplněk, ale hlavní nositel informace:
+
+Styl fotek: "Fine-art" styl – přirozené denní světlo, žádné blesky, nízká saturace barev.
+
+Detaily: Vedle fotek pokojů musí být i detaily (textura povlečení, ranní káva, detail dřeva), které vyvolávají emoce.
+
+Formát: Velkoformátové snímky přes celou šířku obrazovky nebo asymetricky umístěné v bílém poli.
+
+4. Grafické prvky a tvary
+Geometrie: Striktně pravé úhly. Žádné kulaté rohy, žádné stíny (drop shadows) pod obrázky, žádné přechody (gradienty).
+
+Linky: Pokud se používají oddělovače, tak pouze extrémně tenké (1px) linky v barvě jemné šedi.
+
+Ikony: Minimum ikon. Pokud ano, pak pouze velmi jemné, lineární (perokresba), žádné barevné výplně.
+
+5. Layout a navigace (Vzdušnost)
+Asymetrie: Obrázky a texty nejsou vždy v jedné lince. To vytváří pocit listování luxusním časopisem.
+
+Navigace: Skrytá (hamburger menu) nebo velmi minimalistická v horní části. Nesmí vizuálně rušit úvodní dojem z fotky.
+
+Tlačítka (Call to Action): Žádné výrazné "boxy". Často jen textový odkaz s jemným podtržením nebo velmi decentní rámeček, který se při najetí myší (hover) jemně změní.
+
+Shrnutí pro grafika (Brief):
+"Vytvoř web, který nebude vypadat jako prodejní katalog, ale jako digitální výstava. Použij maximální množství bílého prostoru, elegantní patkovou typografii pro nadpisy a stav vše na špičkových fotografiích. Cílem je vyvolat pocit klidu, ticha a exkluzivity. Vyhni se všem moderním 'křiklavým' prvkům, barvám a stínům."
+
+Tento přístup by u ubytování v Telči (zejména u objektu "U Šeniglů" na historickém náměstí) fungoval skvěle, protože by podtrhl historickou hodnotu domu moderním, svěžím způsobem.

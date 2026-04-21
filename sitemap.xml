@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.ubytovani-telc.cz/</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.ubytovani-telc.cz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubytovani-telc.cz/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ubytovani-telc.cz/"/>
+  </url>
+  <url>
+    <loc>https://www.ubytovani-telc.cz/en/</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.ubytovani-telc.cz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubytovani-telc.cz/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ubytovani-telc.cz/"/>
+  </url>
+  <url>
+    <loc>https://www.ubytovani-telc.cz/o-telci.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.ubytovani-telc.cz/o-telci.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubytovani-telc.cz/en/o-telci.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ubytovani-telc.cz/o-telci.html"/>
+  </url>
+  <url>
+    <loc>https://www.ubytovani-telc.cz/en/o-telci.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.ubytovani-telc.cz/o-telci.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubytovani-telc.cz/en/o-telci.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ubytovani-telc.cz/o-telci.html"/>
+  </url>
+  <url>
+    <loc>https://www.ubytovani-telc.cz/tipy-na-vylety.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.ubytovani-telc.cz/tipy-na-vylety.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubytovani-telc.cz/en/tipy-na-vylety.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ubytovani-telc.cz/tipy-na-vylety.html"/>
+  </url>
+  <url>
+    <loc>https://www.ubytovani-telc.cz/en/tipy-na-vylety.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.ubytovani-telc.cz/tipy-na-vylety.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubytovani-telc.cz/en/tipy-na-vylety.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ubytovani-telc.cz/tipy-na-vylety.html"/>
+  </url>
+</urlset>
