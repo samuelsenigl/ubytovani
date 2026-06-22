@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // === FALLBACK SAFETY NET ===
+    // Pokud něco selže (např. CloudFlare Rocket Loader nebo blokátor),
+    // po 2 sek. zobrazíme všechny sekce manuálně.
+    const revealFallbackTimer = setTimeout(() => {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+    }, 2000);
+
+    try {
+
     // 1. Mobile Menu Toggle
     const menuToggle = document.getElementById("mobile-menu-toggle");
     const mobileNav = document.getElementById("mobile-nav");
@@ -197,13 +206,22 @@ document.addEventListener("DOMContentLoaded", () => {
         showLightboxImage(currentImageIndex + 1);
     });
 
-    // Podpora klávesnice
-    document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
+        // Podpora klávesnice
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
 
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') showLightboxImage(currentImageIndex - 1);
-        if (e.key === 'ArrowRight') showLightboxImage(currentImageIndex + 1);
-    });
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showLightboxImage(currentImageIndex - 1);
+            if (e.key === 'ArrowRight') showLightboxImage(currentImageIndex + 1);
+        });
+
+        // Vše OK, zruš fallback timer
+        clearTimeout(revealFallbackTimer);
+
+    } catch (err) {
+        console.warn('[script.js] Chyba inicializace, zobrazuji obsah bez animací:', err);
+        // Fallback: zobraz všechny sekce okamžitě
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+    }
 });
 
