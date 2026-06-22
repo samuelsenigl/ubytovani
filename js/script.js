@@ -1,5 +1,64 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // =========================================
+    // Cookie Consent & Maps Lazy Load
+    // =========================================
+
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieAccept = document.getElementById('cookie-accept');
+    const cookieDecline = document.getElementById('cookie-decline');
+    const COOKIE_KEY = 'cookie-consent';
+
+    function loadMaps() {
+        document.querySelectorAll('.consent-map[data-src]').forEach(iframe => {
+            iframe.src = iframe.dataset.src;
+        });
+    }
+
+    function showMapPlaceholder(isCs) {
+        document.querySelectorAll('.map-container').forEach(container => {
+            const iframe = container.querySelector('.consent-map');
+            if (iframe) {
+                iframe.remove();
+                const placeholder = document.createElement('div');
+                placeholder.className = 'map-placeholder';
+                placeholder.innerHTML = `
+                    <span class="map-placeholder-icon">🗺</span>
+                    <span>${isCs ? 'Mapy jsou nedostupné – cookies odmítnuty' : 'Maps unavailable — cookies declined'}</span>
+                `;
+                container.appendChild(placeholder);
+            }
+        });
+    }
+
+    const savedConsent = localStorage.getItem(COOKIE_KEY);
+    const isCs = document.documentElement.lang !== 'en';
+
+    if (savedConsent === 'accepted') {
+        loadMaps();
+    } else if (savedConsent === 'declined') {
+        showMapPlaceholder(isCs);
+    } else {
+        // Show banner after short delay so page renders first
+        setTimeout(() => cookieBanner.classList.add('visible'), 600);
+    }
+
+    if (cookieAccept) {
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem(COOKIE_KEY, 'accepted');
+            cookieBanner.classList.remove('visible');
+            loadMaps();
+        });
+    }
+
+    if (cookieDecline) {
+        cookieDecline.addEventListener('click', () => {
+            localStorage.setItem(COOKIE_KEY, 'declined');
+            cookieBanner.classList.remove('visible');
+            showMapPlaceholder(isCs);
+        });
+    }
+
     // === FALLBACK SAFETY NET ===
     // Pokud něco selže (např. CloudFlare Rocket Loader nebo blokátor),
     // po 2 sek. zobrazíme všechny sekce manuálně.
