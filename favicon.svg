@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <defs>
+    <mask id="house-mask">
+      <!-- Everything white is kept -->
+      <rect x="0" y="0" width="32" height="32" fill="#FFFFFF" />
+      
+      <!-- Cutouts (black) for transparent windows and door -->
+      <!-- Medallion (circular top window) -->
+      <circle cx="16" cy="9" r="1.8" fill="#000000" />
+      
+      <!-- Two rectangular windows -->
+      <rect x="8"  y="15" width="5" height="4" fill="#000000" />
+      <rect x="19" y="15" width="5" height="4" fill="#000000" />
+      
+      <!-- Doorway (50% building width = 10px wide) -->
+      <rect x="11" y="25" width="10" height="7" fill="#000000" />
+      <ellipse cx="16" cy="25" rx="5" ry="4" fill="#000000" />
+    </mask>
+  </defs>
+
+  <!-- The house silhouette with the mask applied -->
+  <g mask="url(#house-mask)">
+    <!-- Crenellations / cimbuří (castle-like battlements, 2px high) -->
+    <rect x="7"  y="1" width="3" height="2" fill="#1F1F1F"/>
+    <rect x="12" y="1" width="3" height="2" fill="#1F1F1F"/>
+    <rect x="17" y="1" width="3" height="2" fill="#1F1F1F"/>
+    <rect x="22" y="1" width="3" height="2" fill="#1F1F1F"/>
+
+    <!-- Flat parapet wall connecting the battlements -->
+    <rect x="6" y="3" width="20" height="2" fill="#1F1F1F"/>
+
+    <!-- Building body (taller: from y=5 to y=32) -->
+    <rect x="6" y="5" width="20" height="27" fill="#1F1F1F"/>
+  </g>
+</svg>
