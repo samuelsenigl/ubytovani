@@ -11,7 +11,14 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <script>document.documentElement.classList.add('js');</script>
+    <script>
+        document.documentElement.classList.add('js');
+        // Fallback safety net: if script.js is blocked by AdBlock,
+        // remove 'js' class after 2 seconds to smoothly reveal elements.
+        window.fallbackReveal = setTimeout(function() {
+            document.documentElement.classList.remove('js');
+        }, 2000);
+    </script>
     <link rel="canonical" href="https://www.ubytovani-telc.cz/en/">
     <link rel="alternate" hreflang="cs" href="https://www.ubytovani-telc.cz/">
     <link rel="alternate" hreflang="en" href="https://www.ubytovani-telc.cz/en/">

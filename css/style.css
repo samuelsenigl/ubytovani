@@ -767,17 +767,18 @@ img {
    Animations (Scroll Reveal)
    ========================================= */
 
-/* Animace reveal funguje pouze pokud JS úspěšně přidal třídu 'js' na <html> */
-/* Bez JS (nebo pokud je JS zablokován CloudFlare) jsou sekce rovnou viditelné */
-html.js .reveal {
-    opacity: 0;
-    transform: translateY(40px);
+/* Základní stav - viditelné, s plynulým přechodem */
+.reveal {
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-html.js .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+/* Pokud funguje JS (třída 'js' na <html>), elementy bez třídy '.active' skryjeme */
+/* Pokud JS selže, třída 'js' se díky pojistce v HTML odebere a elementy se plynule zobrazí. */
+html.js .reveal:not(.active) {
+    opacity: 0;
+    transform: translateY(40px);
 }
 
 /* =========================================

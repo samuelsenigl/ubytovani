@@ -59,13 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // === FALLBACK SAFETY NET ===
-    // Pokud něco selže (např. CloudFlare Rocket Loader nebo blokátor),
-    // po 2 sek. zobrazíme všechny sekce manuálně.
-    const revealFallbackTimer = setTimeout(() => {
-        document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
-    }, 2000);
-
     try {
 
     // 1. Mobile Menu Toggle
@@ -274,8 +267,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.key === 'ArrowRight') showLightboxImage(currentImageIndex + 1);
         });
 
-        // Vše OK, zruš fallback timer
-        clearTimeout(revealFallbackTimer);
+        // Vše OK, zruš fallback timer z HTML hlavičky
+        if (window.fallbackReveal) clearTimeout(window.fallbackReveal);
 
     } catch (err) {
         console.warn('[script.js] Chyba inicializace, zobrazuji obsah bez animací:', err);
