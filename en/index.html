@@ -15,7 +15,7 @@
         document.documentElement.classList.add('js');
         // Fallback safety net: if script.js is blocked by AdBlock,
         // remove 'js' class after 2 seconds to smoothly reveal elements.
-        window.fallbackReveal = setTimeout(function() {
+        window.fallbackReveal = setTimeout(function () {
             document.documentElement.classList.remove('js');
         }, 2000);
     </script>
@@ -116,9 +116,7 @@
                     <li>Fully equipped shared kitchen with fridge</li>
                     <li>Children under 3 years free</li>
                 </ul>
-                <p></p>
-                <p>(We also offer 2 more rooms at the address 28. října 648, in Telč, in the guesthouse U kamenné zídky,
-                    with a garden and a garden house for bicycles.)</p>
+
                 <div class="image-content mobile-only">
                     <img src="../images/namesti/namesti.webp" alt="Náměstí v Telči" loading="lazy">
                 </div>
@@ -223,6 +221,24 @@
                         <p>Night quiet time is required from 21:00 to 8:00. The accommodation is not suitable for
                             parties or bachelor(ette) events.</p>
                     </details>
+                    <details>
+                        <summary>What about parking in the center?</summary>
+                        <p>
+                            You can drive to the square, check in, and then re-park at one of the parking lots a few
+                            minutes' walk from the square (some are paid, some are free). In the summer season, you may
+                            sometimes need to show your accommodation voucher when entering the square.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Do you provide breakfast?</summary>
+                        <p>
+                            A kitchen is available for preparing your own breakfast. Or on the square we can recommend,
+                            for example, <a href="https://maps.app.goo.gl/c47Pd64CCqUrR5PL9" target="_blank"
+                                rel="noopener noreferrer">Bistro Café Friends</a> (2 min walk) or <a
+                                href="https://maps.app.goo.gl/2H8UWwjzPSbiGsbQA" target="_blank"
+                                rel="noopener noreferrer">Café Telč</a> (3 min walk).
+                        </p>
+                    </details>
                 </div>
             </div>
         </section>
@@ -272,15 +288,19 @@
                     <div class="map-column">
                         <h3 class="map-title">U Šeniglů</h3>
                         <div class="map-container">
-                            <iframe data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2615.1557053538407!2d15.451996!3d49.1834711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470d6a4548006c71%3A0xc3f345c26b2b6ab0!2zTsOhbS4gWmFjaGFyacOhxaFlIHogSHJhZGNlIDExLCA1ODggNTYgVGVsxI0!5e0!3m2!1scs!2scz!4vX!5m2!1scs!2scz"
-                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="consent-map"></iframe>
+                            <iframe
+                                data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2615.1557053538407!2d15.451996!3d49.1834711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470d6a4548006c71%3A0xc3f345c26b2b6ab0!2zTsOhbS4gWmFjaGFyacOhxaFlIHogSHJhZGNlIDExLCA1ODggNTYgVGVsxI0!5e0!3m2!1scs!2scz!4vX!5m2!1scs!2scz"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                class="consent-map"></iframe>
                         </div>
                     </div>
                     <div class="map-column">
                         <h3 class="map-title">U kamenné zídky</h3>
                         <div class="map-container">
-                            <iframe data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2615.1119565011933!2d15.451996!3d49.1843181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470d6a2f4da89d81%3A0xc6ad54eb441f9fc!2zMjguIMWZw61qbmEgNjQ4LCA1ODggNTYgVGVsxI0!5e0!3m2!1scs!2scz!4vX!5m2!1scs!2scz"
-                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="consent-map"></iframe>
+                            <iframe
+                                data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2615.1119565011933!2d15.451996!3d49.1843181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470d6a2f4da89d81%3A0xc6ad54eb441f9fc!2zMjguIMWZw61qbmEgNjQ4LCA1ODggNTYgVGVsxI0!5e0!3m2!1scs!2scz!4vX!5m2!1scs!2scz"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                class="consent-map"></iframe>
                         </div>
                     </div>
                 </div>
@@ -311,7 +331,8 @@
         <div class="cookie-banner-inner">
             <div class="cookie-banner-text">
                 <p class="cookie-banner-title">Cookie Policy</p>
-                <p>This site displays interactive Google Maps which may store third-party cookies. Your choice will be remembered for future visits.</p>
+                <p>This site displays interactive Google Maps which may store third-party cookies. Your choice will be
+                    remembered for future visits.</p>
             </div>
             <div class="cookie-banner-actions">
                 <button id="cookie-decline" class="cookie-btn cookie-btn-decline">Decline</button>
