@@ -489,7 +489,7 @@ img {
 /* Hero Section */
 .hero {
     position: relative;
-    padding-top: calc(var(--spacing-xl) * 1.5);
+    padding-top: 100px;
     padding-bottom: 0;
 }
 
@@ -518,6 +518,7 @@ img {
 
 @media (min-width: 768px) {
     .hero {
+        padding-top: 140px;
         padding-left: 4%;
         padding-right: 4%;
     }
