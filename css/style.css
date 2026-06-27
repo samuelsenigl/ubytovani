@@ -430,8 +430,59 @@ img {
 }
 
 @media only screen and (max-width: 700px) {
+    .lightbox {
+        padding-top: 0;
+    }
+    .lightbox.active {
+        display: grid;
+        grid-template-rows: 70px 1fr auto;
+        grid-template-columns: 60px 1fr 60px;
+        align-items: center;
+        height: 100%;
+    }
+    .lightbox-close {
+        position: static;
+        grid-row: 1;
+        grid-column: 3;
+        justify-self: end;
+        align-self: center;
+        margin-right: 10px;
+        font-size: 40px;
+        padding: 10px;
+    }
     .lightbox-content {
+        grid-row: 2;
+        grid-column: 1 / 4;
+        max-height: 100%;
         max-width: 100%;
+        margin: 0 auto;
+    }
+    .lightbox-prev, .lightbox-next {
+        position: static;
+        grid-row: 3;
+        margin: 0;
+        padding: 15px 15px;
+        font-size: 28px;
+        background: transparent;
+    }
+    .lightbox-prev {
+        grid-column: 1;
+        justify-self: start;
+    }
+    .lightbox-next {
+        grid-column: 3;
+        justify-self: end;
+    }
+    .lightbox-caption {
+        position: static;
+        grid-row: 3;
+        grid-column: 2;
+        margin: 0;
+        padding: 15px 0;
+        width: 100%;
+        height: auto;
+        align-self: center;
+        justify-self: center;
     }
 }
 
@@ -786,48 +837,58 @@ html.js .reveal:not(.active) {
    ========================================= */
 
 /* Hide default cursor on interactive sections */
-body {
-    cursor: none;
-}
+@media (pointer: fine) {
+    body {
+        cursor: none;
+    }
 
-a,
-button,
-summary,
-.menu-toggle,
-.mobile-nav-close,
-.lang-btn {
-    cursor: none !important;
-}
+    a,
+    button,
+    summary,
+    .menu-toggle,
+    .mobile-nav-close,
+    .lang-btn,
+    .gallery-img,
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+        cursor: none !important;
+    }
 
-/* Custom Cursor */
-.custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border: 1px solid var(--text-color);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 999999;
-    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-}
+    /* Custom Cursor */
+    .custom-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--text-color);
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 999999;
+        transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
 
-.custom-cursor.hover {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(31, 31, 31, 0.05);
-    /* very subtle shade */
-}
+    .custom-cursor.hover {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(31, 31, 31, 0.05);
+    }
 
-/* Lightbox cursor overrides */
-body.lightbox-open .custom-cursor {
-    border-color: #fff;
-}
+    /* Lightbox cursor overrides */
+    body.lightbox-open .custom-cursor {
+        border-color: #fff;
+    }
 
-body.lightbox-open .custom-cursor.hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    body.lightbox-open .custom-cursor.hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+@media (pointer: coarse) {
+    .custom-cursor {
+        display: none !important;
+    }
 }
 
 /* Lang Toggle */

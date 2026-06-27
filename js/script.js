@@ -206,16 +206,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const lightboxNext = document.getElementById('lightbox-next');
 
     // Nalezneme všechny obrázky v galeriích
-    const galleryImages = Array.from(document.querySelectorAll('.gallery-img'));
+    const allGalleryImages = document.querySelectorAll('.gallery-img');
+    let activeGalleryImages = [];
     let currentImageIndex = 0;
 
     // Funkce pro zobrazení obrázku v Lightboxu
     function showLightboxImage(index) {
-        if (index < 0) index = galleryImages.length - 1;
-        if (index >= galleryImages.length) index = 0;
+        if (!activeGalleryImages.length) return;
+        if (index < 0) index = activeGalleryImages.length - 1;
+        if (index >= activeGalleryImages.length) index = 0;
 
         currentImageIndex = index;
-        const imgElement = galleryImages[currentImageIndex];
+        const imgElement = activeGalleryImages[currentImageIndex];
 
         lightboxImg.src = imgElement.src;
         lightboxCaption.innerHTML = imgElement.alt;
@@ -225,8 +227,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Event listener na každý obrázek
-    galleryImages.forEach((img, index) => {
+    allGalleryImages.forEach(img => {
         img.addEventListener('click', () => {
+            const container = img.closest('.room-gallery');
+            if (container) {
+                activeGalleryImages = Array.from(container.querySelectorAll('.gallery-img'));
+            } else {
+                activeGalleryImages = [img];
+            }
+            const index = activeGalleryImages.indexOf(img);
             showLightboxImage(index);
         });
     });
@@ -266,6 +275,34 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.key === 'ArrowLeft') showLightboxImage(currentImageIndex - 1);
             if (e.key === 'ArrowRight') showLightboxImage(currentImageIndex + 1);
         });
+
+        // Podpora dotykových gest (Swipe pro mobily)
+        let touchstartX = 0;
+        let touchendX = 0;
+
+        lightbox.addEventListener('touchstart', (e) => {
+            touchstartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', (e) => {
+            touchendX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchendX < touchstartX - swipeThreshold) {
+                showLightboxImage(currentImageIndex + 1); // Swipe doleva -> další
+            }
+            if (touchendX > touchstartX + swipeThreshold) {
+                showLightboxImage(currentImageIndex - 1); // Swipe doprava -> předchozí
+            }
+        }
+
+        // Bezpečnější blokování scrollování na mobilech (iOS)
+        lightbox.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
 
         // Vše OK, zruš fallback timer z HTML hlavičky
         if (window.fallbackReveal) clearTimeout(window.fallbackReveal);
