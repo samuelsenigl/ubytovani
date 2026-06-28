@@ -529,6 +529,7 @@ img {
         text-align: left;
         transform: translateY(-20%);
     }
+
 }
 
 .cta-link {
@@ -550,6 +551,17 @@ img {
     display: flex;
     gap: var(--spacing-lg);
     flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+    .cta-group {
+        justify-content: center;
+        gap: var(--spacing-sm) var(--spacing-lg);
+        margin-top: var(--spacing-md);
+    }
+    .cta-link {
+        margin-top: 0;
+    }
 }
 
 .cta-secondary {
@@ -660,6 +672,24 @@ img {
     justify-content: space-between;
     margin-bottom: 8px;
     align-items: baseline;
+    gap: 8px;
+}
+
+.contact-value {
+    text-align: right;
+    word-break: break-word;
+}
+
+@media (max-width: 480px) {
+    .contact-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 16px;
+    }
+    .contact-value {
+        text-align: left;
+    }
 }
 
 .contact-address-lines {
