@@ -6,6 +6,8 @@
     /* Colors */
     --bg-color: #FCFCFC;
     /* Creamy white */
+    --bg-alt: #F2F4F5;
+    /* Very subtle cool gray for visual rhythm */
     --text-color: #1F1F1F;
     /* Anthracite / soft black */
     --text-muted: #666666;
@@ -236,6 +238,10 @@ img {
 
 .section {
     padding: var(--spacing-xl) 4%;
+}
+
+.bg-tint {
+    background-color: var(--bg-alt);
 }
 
 /* Split Layout (Image + Text Asymmetry) */
