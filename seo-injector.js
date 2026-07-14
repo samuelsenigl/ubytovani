@@ -6,9 +6,10 @@ const basePath = __dirname;
 const domain = 'https://www.ubytovani-telc.cz';
 
 const pages = [
-    { file: 'index.html', path: '', enPath: 'en/' },
-    { file: 'o-telci.html', path: 'o-telci.html', enPath: 'en/o-telci.html' },
-    { file: 'tipy-na-vylety.html', path: 'tipy-na-vylety.html', enPath: 'en/tipy-na-vylety.html' }
+    { file: 'index.html', enFile: 'index.html', path: '', enPath: 'en/' },
+    { file: 'o-telci.html', enFile: 'o-telci.html', path: 'o-telci.html', enPath: 'en/o-telci.html' },
+    { file: 'tipy-na-vylety.html', enFile: 'tipy-na-vylety.html', path: 'tipy-na-vylety.html', enPath: 'en/tipy-na-vylety.html' },
+    { file: 'rezervace.html', enFile: 'booking.html', path: 'rezervace.html', enPath: 'en/booking.html' }
 ];
 
 const structuredDataTemplateCs = `[
@@ -360,7 +361,7 @@ const processFile = (filepath, isEn, pageInfo) => {
 
 pages.forEach(page => {
     const czPath = path.join(basePath, page.file);
-    const enPath = path.join(basePath, 'en', page.file);
+    const enPath = path.join(basePath, 'en', page.enFile || page.file);
 
     processFile(czPath, false, page);
     processFile(enPath, true, page);

@@ -54,4 +54,22 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ubytovani-telc.cz/en/tipy-na-vylety.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ubytovani-telc.cz/tipy-na-vylety.html"/>
   </url>
+  <url>
+    <loc>https://www.ubytovani-telc.cz/rezervace.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.ubytovani-telc.cz/rezervace.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubytovani-telc.cz/en/booking.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ubytovani-telc.cz/rezervace.html"/>
+  </url>
+  <url>
+    <loc>https://www.ubytovani-telc.cz/en/booking.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.ubytovani-telc.cz/rezervace.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubytovani-telc.cz/en/booking.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ubytovani-telc.cz/rezervace.html"/>
+  </url>
 </urlset>

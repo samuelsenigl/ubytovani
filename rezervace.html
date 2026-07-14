@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="cs"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online rezervace | Ubytování Telč</title>
+    <meta name="description" content="Ověřte si aktuální obsazenost a rezervujte si ubytování v Telči online.">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script>
+        document.documentElement.classList.add('js');
+        window.fallbackReveal = setTimeout(function () {
+            document.documentElement.classList.remove('js');
+        }, 2000);
+    </script>
+<link rel="canonical" href="https://www.ubytovani-telc.cz/rezervace.html"><link rel="alternate" hreflang="cs" href="https://www.ubytovani-telc.cz/rezervace.html"><link rel="alternate" hreflang="en" href="https://www.ubytovani-telc.cz/en/booking.html"><link rel="alternate" hreflang="x-default" href="https://www.ubytovani-telc.cz/rezervace.html"><meta property="og:title" content="Online rezervace | Ubytování Telč"><meta property="og:description" content="Ověřte si aktuální obsazenost a rezervujte si ubytování v Telči online."><meta property="og:type" content="website"><meta property="og:url" content="https://www.ubytovani-telc.cz/rezervace.html"><meta property="og:image" content="https://www.ubytovani-telc.cz/images/social.png"></head>
+
+<body>
+    <div class="custom-cursor"></div>
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo"><a href="index.html">Ubytování Telč</a></div>
+            <nav class="nav-desktop">
+                <a href="index.html#u-seniglu">U&nbsp;Šeniglů</a>
+                <a href="index.html#u-kamenne-zidky">U&nbsp;kamenné zídky</a>
+                <a href="index.html#cenik">Ceník</a>
+                <a href="tipy-na-vylety.html">Výlety</a>
+                <a href="index.html#kontakt">Kontakt</a>
+                <a href="rezervace.html" class="nav-highlight">Rezervace</a>
+                <div class="lang-toggle">
+                    <a class="lang-btn active" href="rezervace.html">CZ</a> |
+                    <a class="lang-btn" href="en/booking.html">EN</a>
+                </div>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu-toggle">Menu</div>
+        </div>
+        <div class="mobile-nav" id="mobile-nav">
+            <div class="mobile-nav-close" id="mobile-nav-close">Zavřít</div>
+            <a href="index.html#u-seniglu">U&nbsp;Šeniglů</a>
+            <a href="index.html#u-kamenne-zidky">U&nbsp;kamenné zídky</a>
+            <a href="index.html#cenik">Ceník</a>
+            <a href="tipy-na-vylety.html">Výlety</a>
+            <a href="index.html#kontakt">Kontakt</a>
+            <a href="rezervace.html" class="nav-highlight">Rezervace</a>
+            <div class="lang-toggle-mobile" style="margin-top: 2rem; font-size: 1.5rem;">
+                <a class="lang-btn active" href="rezervace.html">CZ</a> |
+                <a class="lang-btn" href="en/booking.html">EN</a>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <section class="section reveal">
+            <div class="container text-center">
+                <h1>Online rezervace</h1>
+                <p class="section-desc">Zde si můžete pohodlně ověřit dostupnost pokojů a rovnou provést rezervaci.</p>
+
+                <div style="margin-top: 3rem; text-align: left;">
+                    <!-- Previo Booking Engine Widget -->
+                    <div id="previo-booking-engine"></div>
+                    <script type="text/javascript">
+                        var bookingEngineConfig = {
+                            id: '019f5a56-97a3-7029-b156-74f6e4a77410',
+                            lang: 'cs',
+                            currency: 'CZK'
+                        };
+                        var a = document.createElement('script');
+                        a.src = 'https://booking.previo.app/loader/';
+                        document.head.appendChild(a);
+
+                        // Ochrana při zablokování skriptu (např. AdBlock) - po 6s zobrazí omluvu a přímé kontakty
+                        setTimeout(function() {
+                            var engine = document.getElementById('previo-booking-engine');
+                            if (engine && engine.children.length === 0) {
+                                engine.innerHTML = '<div class="booking-error" style="padding: 2rem; border: 1px solid var(--border-color); background-color: var(--bg-alt); text-align: center; font-size: 0.95rem; line-height: 1.5; color: var(--text-color); max-width: 600px; margin: 0 auto;">Omlouváme se, ale rezervační systém se nepodařilo načíst (pravděpodobně kvůli blokování skriptů vaším prohlížečem nebo AdBlockem). Pro rezervaci nás prosím kontaktujte přímo telefonicky na <a href="tel:+420775219362" style="font-weight: 500; text-decoration: underline; color: inherit;">+420 775 219 362</a> nebo e-mailem na <a href="mailto:renataseniglova@gmail.com" style="font-weight: 500; text-decoration: underline; color: inherit;">renataseniglova@gmail.com</a>.</div>';
+                            }
+                        }, 6000);
+                    </script>
+                </div>
+
+                <div class="booking-helper" style="margin: 3rem auto 0 auto; max-width: 600px; padding: 1.5rem; border: 1px solid var(--border-color); background-color: var(--bg-alt); text-align: center; font-size: 0.95rem; line-height: 1.5;">
+                    Preferujete raději osobní domluvu nebo máte dotaz? Rádi vám pomůžeme telefonicky na 
+                    <a href="tel:+420775219362" style="font-weight: 500; text-decoration: underline; color: var(--text-color);">+420 775 219 362</a> 
+                    nebo e-mailem na 
+                    <a href="mailto:renataseniglova@gmail.com" style="font-weight: 500; text-decoration: underline; color: var(--text-color);">renataseniglova@gmail.com</a>.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p>© 2026 Ubytování Telč Šeniglovi. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Zpět nahoru">↑</button>
+
+    <script src="js/script.js"></script>
+
+
+
+</body></html>

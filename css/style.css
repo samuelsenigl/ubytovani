@@ -154,6 +154,7 @@ img {
 
 .nav-desktop {
     display: none;
+    align-items: center;
     gap: var(--spacing-md);
 }
 
@@ -1063,4 +1064,9 @@ html.js .reveal:not(.active) {
 
 #back-to-top:hover {
     transform: translateY(-5px);
+}
+
+/* Rezervovaný prostor pro rezervační systém Previo (zabraňuje skákání stránky při načítání) */
+#previo-booking-engine {
+    min-height: 600px;
 }
