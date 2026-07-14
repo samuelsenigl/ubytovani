@@ -330,7 +330,7 @@ const processFile = (filepath, isEn, pageInfo) => {
         { property: 'og:description', content: descText },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: currentUrl },
-        { property: 'og:image', content: `${domain}/images/social.png` }
+        { property: 'og:image', content: `${domain}/images/social.webp` }
     ];
 
     ogTags.forEach(tag => {
