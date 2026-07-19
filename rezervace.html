@@ -1,5 +1,14 @@
 <!DOCTYPE html><html lang="cs"><head>
     <meta charset="UTF-8">
+    <script>
+        if (window.location.hostname.includes('accommodation-telc.com')) {
+            if (sessionStorage.getItem('force_cz') !== 'true' && (!document.referrer || !document.referrer.includes(window.location.hostname))) {
+                window.location.replace('/en/booking.html' + window.location.search + window.location.hash);
+            } else {
+                sessionStorage.setItem('force_cz', 'true');
+            }
+        }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online rezervace | Ubytování Telč</title>
     <meta name="description" content="Ověřte si aktuální obsazenost a rezervujte si ubytování v Telči online.">
