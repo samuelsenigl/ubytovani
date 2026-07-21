@@ -354,6 +354,30 @@ const processFile = (filepath, isEn, pageInfo) => {
         head.appendChild(script);
     }
 
+    // 5. Google Analytics (gtag.js)
+    // Remove existing GA script if any to avoid duplicates
+    doc.querySelectorAll('script[src*="googletagmanager.com/gtag"]').forEach(el => el.remove());
+    doc.querySelectorAll('script').forEach(el => {
+        if (el.textContent.includes('gtag(\'config\', \'G-Q4J1J73VVZ\')')) {
+            el.remove();
+        }
+    });
+
+    const gaScript1 = doc.createElement('script');
+    gaScript1.setAttribute('async', '');
+    gaScript1.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=G-Q4J1J73VVZ');
+    head.appendChild(gaScript1);
+
+    const gaScript2 = doc.createElement('script');
+    gaScript2.textContent = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q4J1J73VVZ');
+`;
+    head.appendChild(gaScript2);
+
     // Output clean html without jsdom artifacts
     fs.writeFileSync(filepath, dom.serialize());
     console.log(`Updated SEO tags for: ${filepath}`);

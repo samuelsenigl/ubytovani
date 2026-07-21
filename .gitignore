@@ -23,3 +23,7 @@ Icon
 !.dev.vars.example
 .env*
 !.env.example
+
+# node_modules pro lokální skripty
+node_modules/
+package-lock.json
