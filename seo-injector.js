@@ -3,7 +3,8 @@ const path = require('path');
 const { JSDOM } = require('jsdom');
 
 const basePath = __dirname;
-const domain = 'https://www.ubytovani-telc.cz';
+const domainCz = 'https://www.ubytovani-telc.cz';
+const domainEn = 'https://accommodation-telc.com';
 
 const pages = [
     { file: 'index.html', enFile: 'index.html', path: '', enPath: 'en/' },
@@ -17,7 +18,7 @@ const structuredDataTemplateCs = `[
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     "name": "Ubytování U Šeniglů",
-    "image": "${domain}/images/hero_room_custom.webp",
+    "image": "${domainCz}/images/hero_room_custom.webp",
     "description": "Klidné a exkluzivní ubytování v historickém domě přímo v centru Telče.",
     "address": {
       "@type": "PostalAddress",
@@ -32,7 +33,7 @@ const structuredDataTemplateCs = `[
       "longitude": 15.453190352053971
     },
     "telephone": "+420775219362",
-    "url": "${domain}/#u-seniglu",
+    "url": "${domainCz}/#u-seniglu",
     "sameAs": "https://maps.app.goo.gl/hWVy6Y9HqUEdNpVV8",
     "priceRange": "600-1400 CZK",
     "amenityFeature": [
@@ -52,7 +53,7 @@ const structuredDataTemplateCs = `[
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     "name": "Ubytování U kamenné zídky",
-    "image": "${domain}/images/ukamennezidky/ukamennezidky_dum.webp",
+    "image": "${domainCz}/images/ukamennezidky/ukamennezidky_dum.webp",
     "description": "Novější penzion v okrajové, klidné části města se zahradou stvořený pro tichý odpočinek.",
     "address": {
       "@type": "PostalAddress",
@@ -67,7 +68,7 @@ const structuredDataTemplateCs = `[
       "longitude": 15.445225740044041
     },
     "telephone": "+420775219362",
-    "url": "${domain}/#u-kamenne-zidky",
+    "url": "${domainCz}/#u-kamenne-zidky",
     "sameAs": "https://maps.app.goo.gl/2LqkcbQNacHyXwdC8",
     "priceRange": "600-1400 CZK",
     "amenityFeature": [
@@ -151,7 +152,7 @@ const structuredDataTemplateEn = `[
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     "name": "Accommodation U Šeniglů",
-    "image": "${domain}/images/hero_room_custom.webp",
+    "image": "${domainEn}/images/hero_room_custom.webp",
     "description": "Peaceful and exclusive accommodation in a historic house right in the center of Telč.",
     "address": {
       "@type": "PostalAddress",
@@ -166,7 +167,7 @@ const structuredDataTemplateEn = `[
       "longitude": 15.453190352053971
     },
     "telephone": "+420775219362",
-    "url": "${domain}/en/#u-seniglu",
+    "url": "${domainEn}/en/#u-seniglu",
     "sameAs": "https://maps.app.goo.gl/hWVy6Y9HqUEdNpVV8",
     "priceRange": "600-1400 CZK",
     "amenityFeature": [
@@ -186,7 +187,7 @@ const structuredDataTemplateEn = `[
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     "name": "Accommodation U kamenné zídky",
-    "image": "${domain}/images/ukamennezidky/ukamennezidky_dum.webp",
+    "image": "${domainEn}/images/ukamennezidky/ukamennezidky_dum.webp",
     "description": "A newer guesthouse in a quiet, marginal part of the town with a garden, created for quiet relaxation.",
     "address": {
       "@type": "PostalAddress",
@@ -201,7 +202,7 @@ const structuredDataTemplateEn = `[
       "longitude": 15.445225740044041
     },
     "telephone": "+420775219362",
-    "url": "${domain}/en/#u-kamenne-zidky",
+    "url": "${domainEn}/en/#u-kamenne-zidky",
     "sameAs": "https://maps.app.goo.gl/tu77Zuettk6RPc3V9",
     "priceRange": "600-1400 CZK",
     "amenityFeature": [
@@ -292,9 +293,9 @@ const processFile = (filepath, isEn, pageInfo) => {
         el.remove();
     });
 
-    const currentUrl = isEn ? `${domain}/${pageInfo.enPath}` : `${domain}/${pageInfo.path}`;
-    const czUrl = `${domain}/${pageInfo.path}`;
-    const enUrl = `${domain}/${pageInfo.enPath}`;
+    const czUrl = `${domainCz}/${pageInfo.path}`;
+    const enUrl = `${domainEn}/${pageInfo.enPath}`;
+    const currentUrl = isEn ? enUrl : czUrl;
 
     // 1. Canonical tag
     const canonical = doc.createElement('link');
@@ -330,7 +331,7 @@ const processFile = (filepath, isEn, pageInfo) => {
         { property: 'og:description', content: descText },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: currentUrl },
-        { property: 'og:image', content: `${domain}/images/social.webp` }
+        { property: 'og:image', content: `${isEn ? domainEn : domainCz}/images/social.webp` }
     ];
 
     ogTags.forEach(tag => {
