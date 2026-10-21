@@ -1,0 +1,25 @@
+# Soubory, které se nenahrávají na Cloudflare jako veřejné statické soubory webu.
+# Git a interní/vývojové soubory
+.git
+.gitignore
+.assetsignore
+.DS_Store
+._*
+.idea
+.agents
+.wrangler
+node_modules
+wrangler.json
+wrangler.jsonc
+wrangler.toml
+package.json
+package-lock.json
+README.md
+
+# Pomocné skripty a poznámky (web je nepoužívá)
+design.txt
+download_fonts.js
+fix_typo.py
+seo-injector.js
+split.js
+ubytovani.txt
